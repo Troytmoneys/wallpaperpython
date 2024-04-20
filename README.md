@@ -1,1 +1,2 @@
-WallPaper Changer IN ALPHA
+# WallPaper Changer
+IN ALPHA
