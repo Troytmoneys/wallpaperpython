@@ -16,11 +16,10 @@ UNSPLASH_ACCESS_KEY = "ESoVUH1y2o_Ymf0D75dGwQ-5PbTFcVlCxGUezWbVonA"
 PEXELS_API_KEY = "0C9jOgR1p85iMebGlpr7StHWBDy03pCUJzd1xRkeuKeg9zw0GbalHJ9F"
 
 def create_image():
-    """Creates an image for the tray icon."""
-    image = Image.new('RGB', (64, 64), color = (255, 0, 0))
-    d = ImageDraw.Draw(image)
-    d.rectangle([16, 16, 48, 48], fill=(0, 255, 0))
-    return image
+    image_path = 'icon9.png'  # Adjust the path to where your icon is stored
+    icon_image = Image.open(image_path)
+    return icon_image
+
 
 def fetch_wallpaper():
     """Fetches a random wallpaper from multiple sources."""
