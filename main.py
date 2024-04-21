@@ -2,13 +2,12 @@ import os
 import random
 import requests
 import ctypes
-import tkinter as tk
-from tkinterweb import HtmlFrame
 from pystray import MenuItem as item
 from pystray import Icon as icon
 from PIL import Image, ImageDraw
 from io import BytesIO
 from dotenv import load_dotenv
+import webbrowser
 
 load_dotenv()
 
@@ -16,7 +15,7 @@ UNSPLASH_ACCESS_KEY = "ESoVUH1y2o_Ymf0D75dGwQ-5PbTFcVlCxGUezWbVonA"
 PEXELS_API_KEY = "0C9jOgR1p85iMebGlpr7StHWBDy03pCUJzd1xRkeuKeg9zw0GbalHJ9F"
 
 def create_image():
-    image_path = 'icon9.png'  # Adjust the path to where your icon is stored
+    image_path = 'icon.png'  # Adjust the path to where your icon is stored
     icon_image = Image.open(image_path)
     return icon_image
 
@@ -56,12 +55,7 @@ def save_wallpaper(icon, item):
 
 def open_about(icon, item):
     """Creates and displays an about page using tkinterweb."""
-    root = tk.Tk()
-    root.title('About')
-    frame = HtmlFrame(root)
-    frame.load_website("https://www.google.com")
-    frame.pack(fill="both", expand=True)
-    root.mainloop()
+    webbrowser.open("google.com")
 
 def exit_application(icon, item):
     """Exits the application."""
