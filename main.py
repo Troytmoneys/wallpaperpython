@@ -24,7 +24,7 @@ def create_image():
 
 def fetch_wallpaper():
     """Fetches a random wallpaper from multiple sources."""
-    source = random.choice(['unsplash', 'bing', 'pexels', 'bingimages'])
+    source = random.choice(['unsplash', 'bing', 'pexels', 'bingimages', 'googleimages'])
     if source == 'unsplash':
         url = f'https://api.unsplash.com/photos/random?client_id={UNSPLASH_ACCESS_KEY}'
         response = requests.get(url)
@@ -108,7 +108,7 @@ def fetch_from_bing():
     headers = {'Ocp-Apim-Subscription-Key': api_key}
     params = {
         "q": "HD wallpapers",  # Search query for wallpapers
-        "count": str(random.randint(0, 1000000)),          # Number of results to return
+        "count": str(random.randint(0, 10000)),          # Number of results to return
         "offset": "0",         # Result offset for pagination
         "imageType": "Photo",
         "mkt": "en-US"
